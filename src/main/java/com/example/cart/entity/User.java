@@ -26,6 +26,14 @@ public class User {
     @Column(name = "PASSWORD")
     private String password;
 
+    @OneToOne
+    @JoinColumn(name = "CART_ID")
+    private Cart cart;
+
+    @OneToOne
+    @JoinColumn(name = "WISHLIST_ID")
+    private WishList wishList;
+
     public Integer getId() {
         return id;
     }
@@ -72,5 +80,35 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public WishList getWishList() {
+        return wishList;
+    }
+
+    public void setWishList(WishList wishList) {
+        this.wishList = wishList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", cart=" + cart +
+                ", wishList=" + wishList +
+                '}';
     }
 }

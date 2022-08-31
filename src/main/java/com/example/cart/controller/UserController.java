@@ -1,6 +1,7 @@
 package com.example.cart.controller;
 
 import com.example.cart.dto.UserResponseDTO;
+import com.example.cart.entity.Cart;
 import com.example.cart.entity.User;
 import com.example.cart.service.UserService;
 import org.apache.logging.log4j.LogManager;
